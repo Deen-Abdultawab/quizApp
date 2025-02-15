@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-tab: 1000px;
+  --breakpoint-mob: 560px;
+  --color-correctBg: #22C55E;
+  --color-correctBorder: #E9F1E9;
+  --color-incorrectBg: #EF4444;
+  --color-backgroundCol: #af82ea;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-weight: normal;
+    padding: 0;
+  }
+}
+
+
+body {
+    font-family: "Montserrat";
+}
+
+.transitionEffect {
+  transition: all 0.3s linear;
+}
+
+@layer components {
+  .btn {
+    @apply border border-[#d5bdf4] !p-4 !rounded-[0.5rem] hover:border-[#af82ea]
+  }
+
+  .basicFlex {
+    @apply flex items-center
+  }
+
+  .fontMonte {
+    @apply !font-[Montserrat]
+  }
+
+  .w90 {
+    @apply w-[90%] mx-auto
+  }
+
+  .Vue-Toastification__toast {
+    @apply font-[Montserrat];
+  }
+  
+  .Vue-Toastification__toast--error svg {
+    @apply !text-[#E06F6F];
+  }
+  
+  .Vue-Toastification__toast--error {
+    @apply !bg-white !text-black;
+  }
+  
+  .Vue-Toastification__toast--success {
+    @apply !bg-white !text-black;
+  }
+  
+  .Vue-Toastification__toast--success svg {
+    @apply !text-[#D3DA51];
+  }
+}
