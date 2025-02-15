@@ -13,7 +13,7 @@
                 <div class="grid grid-cols-2 w-full mt-10 gap-4 max-tab:grid-cols-1">
                     <div class="flex flex-wrap justify-center gap-4 max-tab:w-[95%] mx-auto max-mob:w-full">
                         <article 
-                        class="border-dashed border-[#d5bdf4] border-2 h-[12rem] max-mob:h-auto grid place-items-center text-center rounded-[0.5rem] p-10 bg-[#f3edfc] w-[48%] max-mob:w-[40%] cursor-pointer max-mob:p-4"
+                        class="border-dashed border-[#d5bdf4] border-2 h-[12rem] max-mob:h-[8rem] grid place-items-center text-center rounded-[0.5rem] p-10 bg-[#f3edfc] w-[48%] max-mob:w-[40%] cursor-pointer max-mob:p-4"
                         v-for="(question, index) in dragQuestions"
                         :key="index"
                         @dragover.prevent
@@ -95,12 +95,12 @@ const dropAnswer = (event, questionIndex) => {
         dragQuestions[questionIndex].isCorrect = true;
         dragQuestions[questionIndex].isWrong = false;
         const successMsg = successMessages[Math.floor(Math.random() * successMessages.length)];
-        toast.success(successMsg, { timeout: 3000 });
+        toast.success(successMsg, { timeout: 2000 });
     } else {
         dragQuestions[questionIndex].isCorrect = false;
         dragQuestions[questionIndex].isWrong = true;
         const errorMsg = errorMessages[Math.floor(Math.random() * errorMessages.length)];
-        toast.error(errorMsg, { timeout: 3000 });
+        toast.error(errorMsg, { timeout: 2000 });
     }
 
     lessonCount.value += 0.1;
