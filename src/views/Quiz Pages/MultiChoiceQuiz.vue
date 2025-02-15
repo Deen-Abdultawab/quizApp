@@ -2,6 +2,7 @@
   <section class="w-[90%] mx-auto pt-10 flex min-h-[100vh] gap- max-tab:flex-col">
     <div class="max-tab:h-auto w-[40%] max-tab:w-full">
         <div class="flex justify-between !mb-4">
+          <span class="font-bold" @click="routeHome">Home</span>
             <!-- <arrowCircle 
             class="w-[2rem] h-[2rem]"
             @click="prevQuestion"
@@ -48,6 +49,7 @@ import arrowCircle from '@/components/icons/arrowCircle.vue';
 import {questions} from '@/composables/questions'
 import { errorMessages, successMessages } from '@/composables/messages';
 import { useToast } from "vue-toastification";
+import { useRouter } from 'vue-router';
 
 
 const questionCount = ref(0)
@@ -56,6 +58,12 @@ const isWrong = ref(false)
 const currentPoint = ref(0)
 const selectedOption = ref(null); // Track the selected option
 const toast = useToast();
+const router = useRouter()
+
+const routeHome = ()=>{
+    resetOptions()
+    router.push({ name: 'home'})
+}
 
 const currentQuestion = computed(()=>{
   return questions[questionCount.value]

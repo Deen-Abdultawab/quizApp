@@ -33,7 +33,7 @@ body {
 
 @layer components {
   .btn {
-    @apply border border-[#d5bdf4] !p-4 !rounded-[0.5rem] hover:border-[#af82ea]
+    @apply border border-[#d5bdf4] !p-4 !rounded-[0.5rem] hover:border-[#af82ea] text-center
   }
 
   .basicFlex {

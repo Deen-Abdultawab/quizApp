@@ -78,6 +78,7 @@ const routeHome = ()=>{
 
 const dragStart = (event, answer) => {
     event.dataTransfer.setData("text/plain", answer)
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 const dropAnswer = (event, questionIndex) => {
