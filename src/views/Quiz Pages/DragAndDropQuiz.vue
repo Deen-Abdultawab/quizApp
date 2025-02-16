@@ -1,5 +1,5 @@
 <template>
-    <section class="min-h-[100vh] pt-10 bg-[#f3edfc]">
+    <section class="min-h-[100vh] py-10 max-tab:pb-0 bg-[#f3edfc]">
         <div class="">
             <div class="basicFlex justify-between items-center w90">
                 <span class="font-bold">Lesson {{ lessonCount.toLocaleString() }}</span>
