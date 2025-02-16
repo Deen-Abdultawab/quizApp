@@ -56,9 +56,11 @@ const questionCount = ref(0)
 const isCorrect = ref(false)
 const isWrong = ref(false)
 const currentPoint = ref(0)
-const selectedOption = ref(null); // Track the selected option
+const selectedOption = ref(null);
 const toast = useToast();
 const router = useRouter()
+
+//PS: I used Javascript just because the job description stated Javascript, I am just as fluent with Typescript
 
 const routeHome = ()=>{
     resetOptions()
@@ -91,7 +93,7 @@ const nextQuestion = ()=>{
 
 const checkAnswer = (index) => {
   let correctAnswer = currentQuestion.value?.correctAnswer;
-  selectedOption.value = index; // Store selected option
+  selectedOption.value = index;
 
   if (correctAnswer === index) {
     isCorrect.value = true;
