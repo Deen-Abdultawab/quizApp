@@ -13,7 +13,7 @@
             />
         </div>
         <div class="flex justify-between items-center bg-[#0c0218] py-4 px-6 rounded-[0.5rem]">
-            <h3 class="text-[#FFFFFF]">Goal: 30 points</h3>
+            <h3 class="text-[#FFFFFF]">Goal: 500 points</h3>
             <h3 class="text-[#c9bbbb]">Current Points: {{ currentPoint }}</h3>
         </div>
         <div class="questions mt-12 max-tab:mb-4">
@@ -44,7 +44,7 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import arrowCircle from '@/components/icons/arrowCircle.vue';
 import {questions} from '@/composables/questions'
 import { errorMessages, successMessages } from '@/composables/messages';
@@ -104,6 +104,10 @@ const checkAnswer = (index) => {
     toast.error(errorMsg, { timeout: 2000 });
   }
 };
+
+onMounted(()=>{
+  window.scrollTo({ top: 0, behavior: "smooth" });
+})
 
 </script>
 

@@ -68,7 +68,7 @@
 <script setup>
 // import timerIcon from '@/components/icons/timerIcon.vue'
 import { dragQuestions } from '@/composables/questions';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useToast } from 'vue-toastification'
 import { successMessages, errorMessages } from '@/composables/messages';
 import refreshIcon from '@/components/icons/refreshIcon.vue'
@@ -123,6 +123,10 @@ const resetGame = () => {
 
   lessonCount.value = 1.0;
 };
+
+onMounted(()=>{
+  window.scrollTo({ top: 0, behavior: "smooth" });
+})
 
 </script>
 
