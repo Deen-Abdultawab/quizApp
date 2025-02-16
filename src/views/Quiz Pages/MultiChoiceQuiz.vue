@@ -84,7 +84,6 @@ const nextQuestion = ()=>{
 
 // const prevQuestion = ()=>{
 //   resetOptions()
-//   console.log(questionCount.value)
 //   if(questionCount.value > 0){
 //     questionCount.value--
 //   }
@@ -98,16 +97,13 @@ const checkAnswer = (index) => {
     isCorrect.value = true;
     currentPoint.value += 10;
     const successMsg = successMessages[Math.floor(Math.random() * successMessages.length)];
-    toast.success(successMsg, { timeout: 3000 });
+    toast.success(successMsg, { timeout: 2000 });
   } else {
     isWrong.value = true;
     const errorMsg = errorMessages[Math.floor(Math.random() * errorMessages.length)];
-    toast.error(errorMsg, { timeout: 3000 });
+    toast.error(errorMsg, { timeout: 2000 });
   }
 };
-
-
-// console.log(currentQuestion.value)
 
 </script>
 

@@ -14,6 +14,8 @@
                     <div class="flex flex-wrap justify-center gap-4 max-tab:w-[95%] mx-auto max-mob:w-full">
                         <article 
                         class="border-dashed border-[#d5bdf4] border-2 h-[12rem] max-mob:h-[8rem] grid place-items-center text-center rounded-[0.5rem] p-10 bg-[#f3edfc] w-[48%] max-mob:w-[40%] cursor-pointer max-mob:p-4"
+                        role="region"
+                        aria-droppable="true"
                         v-for="(question, index) in dragQuestions"
                         :key="index"
                         @dragover.prevent
@@ -29,9 +31,15 @@
                     </div>
     
                     <div class="max-tab:mt-20 max-tab:bg-white max-tab:p-6 max-tab:rounded-t-[4rem] max-mob:p-4">
-                        <h3 class="text-center text-[1.5rem] mb-10 max-mob:text-[1.2rem]">Drag the correct algebraic term below to match it's definition above</h3>
+                        <div class="mb-10 text-center">
+                            <h3 class="text-center text-[1.5rem] max-mob:text-[1rem]">Drag the correct algebraic term below to match it's definition above</h3>
+                            <p class="hidden max-tab:block font-bold">(Tap, hold & drag)</p>
+                        </div>
                         <div class="terms-container flex flex-wrap justify-center gap-4">
-                            <article class="rounded-[0.5rem] bg-black p-4 py-12 grid place-items-center w-[30%] cursor-pointer hover:scale-105 transitionEffect max-mob:p-4" v-for="(option, index) in dragQuestions"
+                            <article class="draggable-item rounded-[0.5rem] bg-black p-4 py-12 grid place-items-center w-[30%] cursor-pointer hover:scale-105 transitionEffect max-mob:p-4" 
+                            aria-draggable="true"
+                            role="button"
+                            v-for="(option, index) in dragQuestions"
                             draggable="true"
                             @dragstart="dragStart($event, option.answer)"
                             >
@@ -46,7 +54,7 @@
                                 <refreshIcon class="text-black"/>
                             </span>
                             <button class="basicFlex gap-4 bg-black p-4 rounded-[0.5rem] cursor-pointer" @click="routeHome">
-                                <h3 class=" text-white">Continue</h3>
+                                <h3 class=" text-white">Finish!</h3>
                                 <arrowIcon class="rotate-[180deg] text-white"/>
                             </button>
                         </div>
@@ -89,7 +97,6 @@ const dropAnswer = (event, questionIndex) => {
     }
 
     dragQuestions[questionIndex].selectedAnswer = draggedAnswer
-    console.log(draggedAnswer, dragQuestions[questionIndex])
 
     if(draggedAnswer.toLowerCase().trim() === dragQuestions[questionIndex].answer?.toLowerCase().trim() ){
         dragQuestions[questionIndex].isCorrect = true;

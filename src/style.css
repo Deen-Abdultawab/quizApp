@@ -5,10 +5,6 @@
 @theme {
   --breakpoint-tab: 1000px;
   --breakpoint-mob: 560px;
-  --color-correctBg: #22C55E;
-  --color-correctBorder: #E9F1E9;
-  --color-incorrectBg: #EF4444;
-  --color-backgroundCol: #af82ea;
 }
 
 @layer base {
@@ -29,6 +25,11 @@ body {
 
 .transitionEffect {
   transition: all 0.3s linear;
+}
+
+.draggable-item {
+  touch-action: none; 
+  user-select: none;
 }
 
 @layer components {
