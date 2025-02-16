@@ -2,7 +2,7 @@
   <section class="w-[90%] mx-auto pt-10 flex min-h-[100vh] gap- max-tab:flex-col">
     <div class="max-tab:h-auto w-[40%] max-tab:w-full">
         <div class="flex justify-between !mb-4">
-          <span class="font-bold" @click="routeHome">Home</span>
+          <span class="font-bold cursor-pointer" @click="routeHome">Home</span>
             <!-- <arrowCircle 
             class="w-[2rem] h-[2rem]"
             @click="prevQuestion"
